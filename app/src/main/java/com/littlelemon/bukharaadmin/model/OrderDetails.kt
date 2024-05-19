@@ -31,13 +31,13 @@ class OrderDetails():Serializable{
         currentTime = parcel.readLong()
     }
 
-     fun describeContents(): Int {
-        TODO("Not yet implemented")
-    }
+//     fun describeContents(): Int {
+//
+//    }
 
-     fun writeToParcel(dest: Parcel, flags: Int) {
-        TODO("Not yet implemented")
-    }
+//     fun writeToParcel(dest: Parcel, flags: Int) {
+//
+//    }
 
     companion object CREATOR : Parcelable.Creator<OrderDetails> {
         override fun createFromParcel(parcel: Parcel): OrderDetails {

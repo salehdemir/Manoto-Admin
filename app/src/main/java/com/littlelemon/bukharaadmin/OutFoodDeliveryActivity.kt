@@ -3,7 +3,6 @@ package com.littlelemon.bukharaadmin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.littlelemon.bukharaadmin.Adapter.AllItemAdapter
 import com.littlelemon.bukharaadmin.Adapter.DeliveryAdapter
 import com.littlelemon.bukharaadmin.databinding.ActivityOutFoodDeliveryBinding
 
