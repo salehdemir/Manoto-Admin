@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/pendingCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16sp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pendingCardImage"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="16dp"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                  android:id="@+id/pendingImage"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/coffee"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <TextView
+                android:id="@+id/pendingName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/ultraregular"
+                android:text="Name Customer"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvQuantity"
+                app:layout_constraintStart_toEndOf="@+id/pendingCardImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:fontFamily="@font/robotoblack"
+                android:text="Prices"
+
+               android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintStart_toStartOf="@+id/pendingName"
+                app:layout_constraintTop_toBottomOf="@+id/pendingName" />
+
+            <TextView
+                android:id="@+id/pendingQuantityPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:fontFamily="@font/ultraregular"
+                android:textColor="@color/red"
+
+                app:layout_constraintTop_toTopOf="@id/tvQuantity"
+                app:layout_constraintBottom_toBottomOf="@id/tvQuantity"
+                app:layout_constraintStart_toEndOf="@id/tvQuantity"
+                android:layout_marginStart="8dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAccepted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/greenbtn"
+                android:text="Accept"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_marginEnd="16dp"
+                app:cardBackgroundColor="@color/red"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

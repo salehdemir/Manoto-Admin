@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white2"
+    tools:context=".CreateUserActivity">
+
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_baseline_keyboard_backspace_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/applogo"
+        app:layout_constraintEnd_toEndOf="parent"
+android:layout_marginStart="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintStart_toEndOf="@+id/buttonBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ultraregular"
+        android:text="@string/manoto"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/logLogo"
+        app:layout_constraintStart_toStartOf="@+id/logLogo"
+        app:layout_constraintTop_toBottomOf="@id/logLogo" />
+
+    <TextView
+        android:id="@+id/tvCreateAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/glegoobold"
+
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:text="Create New User Admin"
+        app:layout_constraintEnd_toEndOf="@+id/titleLog"
+        app:layout_constraintStart_toStartOf="@+id/titleLog"
+        app:layout_constraintTop_toBottomOf="@+id/titleLog" />
+
+    <EditText
+        android:id="@+id/etCreateName"
+        android:layout_width="match_parent"
+android:inputType="textPersonName"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:paddingStart="8dp"
+        android:background="@drawable/edittext"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="15dp"
+        android:elevation="5dp"
+        android:ems="15"
+        android:hint="@string/name"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCreateAdmin"
+        app:layout_constraintStart_toStartOf="@id/tvCreateAdmin"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreateAdmin" />
+
+    <EditText
+        android:id="@+id/etCreateEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:drawableStart="@drawable/email_24"
+        android:drawablePadding="15dp"
+        android:ems="15"
+        android:layout_margin="16dp"
+        android:paddingStart="8dp"
+        android:hint="Email or Phone number"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/etCreateName"
+        app:layout_constraintStart_toStartOf="@+id/etCreateName"
+        app:layout_constraintTop_toBottomOf="@+id/etCreateName"
+        android:background="@drawable/edittext"
+        android:elevation="5dp"
+        />
+
+    <EditText
+
+        android:id="@+id/etCreatePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:background="@drawable/edittext"
+        android:elevation="5dp"
+        android:layout_margin="16dp"
+        android:drawablePadding="15dp"
+        android:ems="15"
+        android:paddingStart="8dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/etCreateEmail"
+        app:layout_constraintStart_toStartOf="@+id/etCreateEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etCreateEmail" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCreateAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/redbutton"
+       android:padding="8dp"
+
+        android:text="Create New User"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/etCreatePassword"
+        app:layout_constraintStart_toStartOf="@+id/etCreatePassword"
+        app:layout_constraintTop_toBottomOf="@id/etCreatePassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/ultraregular"
+        android:text="@string/design_by_n_saleh"
+        android:textAlignment="center"
+
+        android:textColor="@color/lightGreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
