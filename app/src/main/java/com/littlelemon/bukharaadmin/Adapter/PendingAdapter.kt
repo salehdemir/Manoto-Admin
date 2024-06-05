@@ -22,6 +22,9 @@ private val context: Context,
 
         interface OnItemClicked{
             fun onItemClickListener(position: Int)
+            fun onItemAcceptClickListener(position: Int)
+            fun onItemDispatchClickListener(position: Int)
+
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingViewHolder {
@@ -62,10 +65,12 @@ private val context: Context,
                           text = "Dispatch"
                           isAccepted = true
                           showToast("Order is Accepted")
+                          itemClicked.onItemAcceptClickListener(position)
                       }else{
                          customerName.removeAt(adapterPosition)
                           notifyItemRemoved(adapterPosition)
                           showToast("Order is Dispatch")
+                          itemClicked.onItemDispatchClickListener(position)
                       }
                   }
               }

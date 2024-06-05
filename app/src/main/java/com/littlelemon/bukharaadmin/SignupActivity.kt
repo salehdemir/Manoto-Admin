@@ -44,6 +44,7 @@ class SignupActivity : AppCompatActivity() {
                 Toast.makeText(this,"Please fill all blanks" ,Toast.LENGTH_SHORT).show()
             }else{
                 createAccount(email,password)
+
             }
 
         }

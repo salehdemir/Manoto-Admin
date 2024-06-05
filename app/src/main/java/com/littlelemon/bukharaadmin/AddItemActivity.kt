@@ -15,6 +15,7 @@ class AddItemActivity : AppCompatActivity() {
     private val binding:ActivityAddItemBinding by lazy {
         ActivityAddItemBinding.inflate(layoutInflater)
     }
+    
 
     private lateinit var foodName:String
     private lateinit var foodPrice:String

@@ -8,10 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.littlelemon.bukharaadmin.databinding.DeliveryitemBinding
 
 class DeliveryAdapter(
-    private val CustomerName: ArrayList<String>,
-    private val PaymentStatus: ArrayList<String>,
-
-) :
+    private val customerName: MutableList<String>,
+    private val paymentStatus: MutableList<Boolean>
+    ) :
     RecyclerView.Adapter<DeliveryAdapter.DeliveryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryAdapter.DeliveryViewHolder {
         val binding = DeliveryitemBinding.inflate(LayoutInflater.from(parent.context), parent,false)
@@ -23,20 +22,26 @@ holder.bind(position)
     }
 
     override fun getItemCount(): Int {
-        return CustomerName.size
+        return customerName.size
     }
 
     inner class DeliveryViewHolder(private val binding: DeliveryitemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.apply {
-                tvCustomerName.text = CustomerName[position]
-                tvReceived.text = PaymentStatus[position]
+                tvCustomerName.text = customerName[position]
+                if (paymentStatus[position] == true ){
+                    tvReceived.text = "Received"
+
+                }else{
+                    tvReceived.text = "Not Received"
+                }
+
                 val colorMap = mapOf(
-                    "Received" to Color.GREEN, "Not Received" to Color.RED, "Pending" to Color.GRAY
+                   true to Color.GREEN, false to Color.RED
                 )
-                tvReceived.setTextColor(colorMap[PaymentStatus[position]]?:Color.BLACK)
-                deliveryColor.backgroundTintList = ColorStateList.valueOf(colorMap[PaymentStatus[position]]?:Color.BLACK)
+                tvReceived.setTextColor(colorMap[paymentStatus[position]]?:Color.BLACK)
+                deliveryColor.backgroundTintList = ColorStateList.valueOf(colorMap[paymentStatus[position]]?:Color.BLACK)
             }
         }
 
