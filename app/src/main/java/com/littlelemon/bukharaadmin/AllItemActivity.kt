@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -64,9 +65,27 @@ database =FirebaseDatabase.getInstance()
 
         val adapter = AllItemAdapter(
           this@AllItemActivity,menuItems,databaseReference
-        )
+        ){position ->
+            deleteMenuItem(position)
+
+        }
 
         binding.allItemRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.allItemRecyclerView.adapter = adapter
+    }
+
+    private fun deleteMenuItem(position: Int) {
+val menuItemToDelete = menuItems[position]
+        val menuItemKey = menuItemToDelete.key
+        val foodMenuRef = database.reference.child("menu").child(menuItemKey!!)
+        foodMenuRef.removeValue().addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.allItemRecyclerView.adapter?.notifyItemRemoved(position)
+
+            }else{
+                Toast.makeText(this,"Item not deleted",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

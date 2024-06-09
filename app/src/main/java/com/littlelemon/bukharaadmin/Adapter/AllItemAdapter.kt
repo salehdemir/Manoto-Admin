@@ -13,7 +13,9 @@ import com.littlelemon.bukharaadmin.model.AllMenuModel
 class AllItemAdapter(
 private val context: Context,
     private val menuList :ArrayList<AllMenuModel>,
-    databaseReference: DatabaseReference
+    databaseReference: DatabaseReference,
+    private val onDeleteClickListener : (position :Int) -> Unit
+
 ) :
     RecyclerView.Adapter<AllItemAdapter.AllItemViewHolder>() {
 
@@ -54,7 +56,7 @@ val quantity = menuItemQuantity[position]
 
                   }
                   cartDeleteIcon.setOnClickListener{
-                   deleteItem(position)
+                   onDeleteClickListener(position)
                   }
               }
         }
